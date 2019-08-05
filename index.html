@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBJHmsYDV1oHf9ANgGtXlY1uqSrqFA68hg",
+            authDomain: "auth-test-e9e4a.firebaseapp.com",
+            databaseURL: "https://auth-test-e9e4a.firebaseio.com",
+            projectId: "auth-test-e9e4a",
+            storageBucket: "auth-test-e9e4a.appspot.com",
+            messagingSenderId: "496274162549",
+            appId: "1:496274162549:web:086154c9f3065ff1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="./geo_library.js"></script>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
