@@ -507,3 +507,25 @@ distance = function (location1, location2) {
 ///
 
 /// Part from geoFire.js
+
+var db = firebase.firestore();
+
+function getQueriesForDocumentsAround(ref, center, radiusInKm, geoField) {
+    var geohashesToQuery = geohashQueries([center.lat, center.lon], radiusInKm * 1000);
+    console.log(JSON.stringify(geohashesToQuery));
+    return geohashesToQuery.map(function (location) {
+        return ref.where(geoField, ">=", location[0]).where(geoField, "<=", location[1]);
+    });
+}
+
+function getNearbyData(collection, center, MAX_DISTANCE, geoField) {
+    var queries = getQueriesForDocumentsAround(collection, center, MAX_DISTANCE, geoField);
+    queries.forEach(function (query) {
+        query.get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                var data = doc.data();
+                console.log(data);
+            });
+        });
+    });
+}
